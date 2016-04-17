@@ -1,7 +1,7 @@
 # Git Style Guide
 
 Это гид по стилю вдохновленный [*How to Get Your Change Into the Linux
-Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches), the [git man pages](http://git-scm.com/doc)и различными практиками популярными в сообществе.
+Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches), the [git man pages](http://git-scm.com/doc) и различными практиками популярными в сообществе.
 
 Переводы доступны на следующих языках:
 
@@ -67,14 +67,12 @@ Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches), the [git m
   $ git branch --merged | grep -v "\*"
   ```
 
-## Коммиты
+## Commits
 
-* Each commit should be a single *logical change*. Don't make several
-  *logical changes* in one commit. For example, if a patch fixes a bug and
-  optimizes the performance of a feature, split it into two separate commits.
+* Каджый коммит должен быть единичным *логическим изменением*. Не делайте несколько *логических изменений* в одном коммите.
+  Для примера, если патч исправляет ошибку и оптимизирует производительность черты программы, разделите его на два раздельных коммита.
 
-  *Tip: Use `git add -p` to interactively stage specific portions of the
-  modified files.*
+  *Подсказка: Используйте `git add -p` для прятанья определенных частей измененных файлов, в интерактивном режиме.*
 
 * Don't split a single *logical change* into several commits. For example,
   the implementation of a feature and the corresponding tests should be in the
