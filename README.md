@@ -67,7 +67,7 @@ Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches), the [git m
   $ git branch --merged | grep -v "\*"
   ```
 
-# Коммиты(#Commits)
+Коммиты(#Commits)
 
 * Each commit should be a single *logical change*. Don't make several
   *logical changes* in one commit. For example, if a patch fixes a bug and
