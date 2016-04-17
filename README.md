@@ -47,32 +47,27 @@ Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches), the [git m
 
 * Используйте *дефисы* для разделения слов в именах веток.
 
-* При работе нескольких людей над *одной* чертой программы (feature), удобно иметь *личную* и *командную* ветви для этой черты.
-
-* When several people are working on the *same* feature, it might be convenient
-  to have *personal* feature branches and a *team-wide* feature branch.
-  Use the following naming convention:
+* При работе нескольких людей над *одной* чертой программы (feature), удобно иметь *личную* и *командную* ветви для этой черты. Используйте следующее соглашение по именованию:
 
   ```shell
-  $ git checkout -b feature-a/master # team-wide branch
-  $ git checkout -b feature-a/maria  # Maria's personal branch
-  $ git checkout -b feature-a/nick   # Nick's personal branch
+  $ git checkout -b feature-a/master # Командная ветвь
+  $ git checkout -b feature-a/maria  # Личная ветвь Маши
+  $ git checkout -b feature-a/nick   # Личная ветвь Никиты
   ```
+  
+  Сливайте личные ветки с командной как угодно (смотри ["Слияние"](#merging)).
+  В конечном итоге командная ветвь будет слита с "мастером".
 
-  Merge at will the personal branches to the team-wide branch (see ["Merging"](#merging)).
-  Eventually, the team-wide branch will be merged to "master".
+* Удаляйте свои ветки из уделённого репозитория (upstream repository), после того как они были слиты воедино. Только при наличии особой причины, ветви можно оставить.
 
-* Delete your branch from the upstream repository after it's merged, unless
-  there is a specific reason not to.
-
-  Tip: Use the following command while being on "master", to list merged
-  branches:
+  Подсказка: Используйте следующую команду, когда находитесь в "мастере",
+  что бы посмотреть слитые ветви:
 
   ```shell
   $ git branch --merged | grep -v "\*"
   ```
 
-## Commits
+## Коммиты(#Commits)
 
 * Each commit should be a single *logical change*. Don't make several
   *logical changes* in one commit. For example, if a patch fixes a bug and
