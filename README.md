@@ -1,54 +1,53 @@
 # Git Style Guide
 
-This is a Git Style Guide inspired by [*How to Get Your Change Into the Linux
-Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches),
-the [git man pages](http://git-scm.com/doc) and various practices popular
-among the community.
+Это гид по стилю вдохновленный [*How to Get Your Change Into the Linux
+Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches), the [git man pages](http://git-scm.com/doc)и различными практиками популярными в сообществе.
 
-Translations are available in the following languages:
+Переводы доступны на следующих языках:
 
-* [Chinese (Simplified)](https://github.com/aseaday/git-style-guide)
-* [Chinese (Traditional)](https://github.com/JuanitoFatas/git-style-guide)
-* [French](https://github.com/pierreroth64/git-style-guide)
-* [Greek](https://github.com/grigoria/git-style-guide)
-* [Japanese](https://github.com/objectx/git-style-guide)
-* [Korean](https://github.com/ikaruce/git-style-guide)
-* [Portuguese](https://github.com/guylhermetabosa/git-style-guide)
-* [Thai](https://github.com/zondezatera/git-style-guide)
-* [Ukrainian](https://github.com/denysdovhan/git-style-guide)
+* [Английский (оригинал)](https://github.com/agis-/git-style-guide)
+* [Китайский (Упрощенный)](https://github.com/aseaday/git-style-guide)
+* [Китайский (Традиционный)](https://github.com/JuanitoFatas/git-style-guide)
+* [Французский](https://github.com/pierreroth64/git-style-guide)
+* [Греческий](https://github.com/grigoria/git-style-guide)
+* [Японский](https://github.com/objectx/git-style-guide)
+* [Корейский](https://github.com/ikaruce/git-style-guide)
+* [Португальский](https://github.com/guylhermetabosa/git-style-guide)
+* [Тайский](https://github.com/zondezatera/git-style-guide)
+* [Украиский](https://github.com/denysdovhan/git-style-guide)
 
-If you feel like contributing, please do so! Fork the project and open a pull
-request.
+Если вы хотите помочь в распространении, пожайлуста! Форкните проект и сделайте pull request.
 
-# Table of contents
+# Содержание
 
-1. [Branches](#branches)
-2. [Commits](#commits)
-  1. [Messages](#messages)
-3. [Merging](#merging)
-4. [Misc.](#misc)
+1. [Ветви](#branches)
+2. [Коммиты](#commits)
+  1. [Сообщение](#messages)
+3. [Слияние](#merging)
+4. [Разное](#misc)
 
 ## Branches
 
-* Choose *short* and *descriptive* names:
+* Выбирайте *короткие* и *ёмкие* имена:
 
   ```shell
-  # good
+  # хорошее
   $ git checkout -b oauth-migration
 
-  # bad - too vague
+  # плохое - слишком расплывчатое
   $ git checkout -b login_fix
   ```
 
-* Identifiers from corresponding tickets in an external service (eg. a GitHub
-  issue) are also good candidates for use in branch names. For example:
+* Идентификаторы из corresponding билетов во внешних сервисах (например GitHub issue) так же хорошие кандидаты для имени ветви. Например:
 
   ```shell
   # GitHub issue #15
   $ git checkout -b issue-15
   ```
 
-* Use *dashes* to separate words.
+* Используйте *дефисы* для разделения слов в именах веток.
+
+* При работе нескольких людей над *одной* чертой программы (feature), удобно иметь *личную* и *командную* ветви для этой черты.
 
 * When several people are working on the *same* feature, it might be convenient
   to have *personal* feature branches and a *team-wide* feature branch.
