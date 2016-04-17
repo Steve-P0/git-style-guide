@@ -21,7 +21,7 @@ Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches), the [git m
 # Содержание
 
 1. [Ветви](#Ветви)
-2. [Коммиты](#коммиты)
+2. [Коммиты](#Коммиты)
   1. [Сообщение](#messages)
 3. [Слияние](#merging)
 4. [Разное](#misc)
