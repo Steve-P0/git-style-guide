@@ -20,13 +20,13 @@ Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches), the [git m
 
 # Содержание
 
-1. [Ветви](#branches)
-2. [Коммиты](#commits)
+1. [Ветви](#Ветви)
+2. [Коммиты](#коммиты)
   1. [Сообщение](#messages)
 3. [Слияние](#merging)
 4. [Разное](#misc)
 
-## Branches
+## Ветви
 
 * Выбирайте *короткие* и *ёмкие* имена:
 
@@ -67,7 +67,7 @@ Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches), the [git m
   $ git branch --merged | grep -v "\*"
   ```
 
-(## Commits)[коммиты]
+## Коммиты
 
 * Each commit should be a single *logical change*. Don't make several
   *logical changes* in one commit. For example, if a patch fixes a bug and
