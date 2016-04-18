@@ -20,13 +20,13 @@ Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches), the [git m
 
 # Содержание
 
-1. [Ветви](#Ветви)
-2. [Коммиты](#Коммиты)
+1. [Ветви](#branches)
+2. [Коммиты](#commits)
   1. [Сообщение](#messages)
 3. [Слияние](#merging)
 4. [Разное](#misc)
 
-## Ветви
+## Branches
 
 * Выбирайте *короткие* и *ёмкие* имена:
 
@@ -38,7 +38,7 @@ Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches), the [git m
   $ git checkout -b login_fix
   ```
 
-* Идентификаторы из corresponding билетов во внешних сервисах (например GitHub issue) так же хорошие кандидаты для имени ветви. Например:
+* Идентификаторы из corresponding билетов во внешних сервисах (например GitHub issue, TFS bug) так же хорошие кандидаты для имени ветви. Например:
 
   ```shell
   # GitHub issue #15
@@ -47,7 +47,7 @@ Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches), the [git m
 
 * Используйте *дефисы* для разделения слов в именах веток.
 
-* При работе нескольких людей над *одной* чертой программы (feature), удобно иметь *личную* и *командную* ветви для этой черты. Используйте следующее соглашение по именованию:
+* При работе нескольких людей над *одной* чертой программы (feature), удобно иметь *личную* и *командную* ветви для этой черты(feature). Используйте следующее соглашение по именованию:
 
   ```shell
   $ git checkout -b feature-a/master # Командная ветвь
@@ -73,42 +73,37 @@ Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches), the [git m
   Для примера, если патч исправляет ошибку и оптимизирует производительность черты программы, разделите его на два раздельных коммита.
 
   *Подсказка: Используйте `git add -p` для прятанья определенных частей измененных файлов, в интерактивном режиме.*
+  
+* Не стоит разделять одно *лоигческое изменение* на несколько коммитов. Например,
+  реализация функции(feature) и сопутствующие тесты должны быть в одном коммите.
 
-* Don't split a single *logical change* into several commits. For example,
-  the implementation of a feature and the corresponding tests should be in the
-  same commit.
+* Коммитьте *своевременно* и *часто*. Мелкие и независимые коммиты просты для понимания и отката,
+  если что-то пойдет не так.
 
-* Commit *early* and *often*. Small, self-contained commits are easier to
-  understand and revert when something goes wrong.
+* Коммиты должны быть *логически* упорядочены. Например, если *коммит А*
+  зависит от изменений сделанных в *коммите Б*, то *коммит Б* должен идти перед *коммитом А*.
 
-* Commits should be ordered *logically*. For example, if *commit X* depends
-  on changes done in *commit Y*, then *commit Y* should come before *commit X*.
-
-Note: While working alone on a local branch that *has not yet been pushed*, it's
-fine to use commits as temporary snapshots of your work. However, it still
-holds true that you should apply all of the above *before* pushing it.
+Примечание: Когда вы единолично работаете над локальной ветвью, которая *еще не была отправлена на сервер*, удобно использовать коммиты как временные снапшоты вашей работы. Тем не менее необходимо придерживаться правил, изложенных выше, *перед тем как* фиксировать изменения.
 
 ### Messages
 
-* Use the editor, not the terminal, when writing a commit message:
+* Используйте текстовый редактор, а не терминал, для написания комментариев коммитов:
 
   ```shell
-  # good
+  # хорошо
   $ git commit
 
-  # bad
+  # плохо
   $ git commit -m "Quick fix"
   ```
+  
+  Коммит из терминала подстёгивает мышление уместить всё сообщение в одну строку,
+  обычно, результатом этого являются неинформативные, двусмысленные комментарии коммитов.
 
-  Committing from the terminal encourages a mindset of having to fit everything
-  in a single line which usually results in non-informative, ambiguous commit
-  messages.
-
-* The summary line (ie. the first line of the message) should be
-  *descriptive* yet *succinct*. Ideally, it should be no longer than
-  *50 characters*. It should be capitalized and written in imperative present
-  tense. It should not end with a period since it is effectively the commit
-  *title*:
+* Обобщающая строка(т.е. первая линия сообщения) должна быть 
+  *описательной* и *ёмкой*. В идеале она должна быть не длиннее *50 символов*.
+  Она должна начинаться с заглавной буквы и должна быть написана в настоящем времени повелительного наклонения.
+  Так же она не должна заканчиваться запятой, стоит воспринимать её как *заголовок* коммита:
 
   ```shell
   # good - imperative present tense, capitalized, fewer than 50 characters
