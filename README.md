@@ -6,15 +6,15 @@ Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches), the [git m
 Переводы доступны на следующих языках:
 
 * [Английский (оригинал)](https://github.com/agis-/git-style-guide)
-* [Китайский (Упрощенный)](https://github.com/aseaday/git-style-guide)
-* [Китайский (Традиционный)](https://github.com/JuanitoFatas/git-style-guide)
-* [Французский](https://github.com/pierreroth64/git-style-guide)
 * [Греческий](https://github.com/grigoria/git-style-guide)
-* [Японский](https://github.com/objectx/git-style-guide)
+* [Китайский (Традиционный)](https://github.com/JuanitoFatas/git-style-guide)
+* [Китайский (Упрощенный)](https://github.com/aseaday/git-style-guide)
 * [Корейский](https://github.com/ikaruce/git-style-guide)
 * [Португальский](https://github.com/guylhermetabosa/git-style-guide)
 * [Тайский](https://github.com/zondezatera/git-style-guide)
 * [Украиский](https://github.com/denysdovhan/git-style-guide)
+* [Французский](https://github.com/pierreroth64/git-style-guide)
+* [Японский](https://github.com/objectx/git-style-guide)
 
 Если вы хотите помочь в распространении, пожайлуста! Форкните проект и сделайте pull request.
 
