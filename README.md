@@ -1,6 +1,6 @@
 # Git Style Guide
 
-Это гид по стилю вдохновленный [*How to Get Your Change Into the Linux
+Это гид по стилю для Git, вдохновленный [*How to Get Your Change Into the Linux
 Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches), the [git man pages](http://git-scm.com/doc) и различными практиками популярными в сообществе.
 
 Переводы доступны на следующих языках:
@@ -94,7 +94,7 @@ Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches), the [git m
   $ git commit
 
   # плохо
-  $ git commit -m "Quick fix"
+  $ git commit -m "Hot fix"
   ```
   
   Коммит из терминала подстёгивает мышление уместить всё сообщение в одну строку,
@@ -112,39 +112,35 @@ Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches), the [git m
   # bad
   fixed ActiveModel::Errors deprecation messages failing when AR was used outside of Rails.
   ```
-
-* After that should come a blank line followed by a more thorough
-  description. It should be wrapped to *72 characters* and explain *why*
-  the change is needed, *how* it addresses the issue and what *side-effects*
-  it might have.
-
-  It should also provide any pointers to related resources (eg. link to the
-  corresponding issue in a bug tracker):
+* После должна идти пустая строка, следом за ней идёт более детальное описание.
+  Оно должно объяснять *почему* данное изменение было сделано,
+  какую решает проблему и какие *побочные эффекты* может иметь.
+  
+  Так же сообщение должно включать ссылки на связанные ресурсы 
+  (например ссылку на таск/баг/проблему в баг трекере:
 
   ```text
-  Short (50 chars or fewer) summary of changes
+  Краткое (50 симв. или меньше) описание изменений
+  
+  Более подробное описание, если требуется. Установите обертку
+  строки на 72 символа. В некоторых контекстах, первая линия
+  воспринимается как тема e-mail, а всё остальное как тело письма.
+  Пустая линия, разделяющая краткое описание от подробного, критична
+  (если вы не опустите тело полностью); tools like rebase can get
+  confused if you run the two together.
 
-  More detailed explanatory text, if necessary. Wrap it to
-  72 characters. In some contexts, the first
-  line is treated as the subject of an email and the rest of
-  the text as the body.  The blank line separating the
-  summary from the body is critical (unless you omit the body
-  entirely); tools like rebase can get confused if you run
-  the two together.
+  Следующие параграфы разделяются пустыми строками.
+  
+  - Пункты списка тоже применимы
+  
+  - Используйте дефис или звездочки для отметок списка,
+    разделяйте отметку и текст пробелом, а сами пункты пустыми строками.
 
-  Further paragraphs come after blank lines.
-
-  - Bullet points are okay, too
-
-  - Use a hyphen or an asterisk for the bullet,
-    followed by a single space, with blank lines in
-    between
-
-  Source http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+  Источник http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
   ```
-
-  Ultimately, when writing a commit message, think about what you would need
-  to know if you run across the commit in a year from now.
+  
+  В конченом счете, когда пишите сообщение для коммита, думайте о том что вам потребуется
+  знать, если вы вернетесь к этому коммиту через год.
 
 * If a *commit A* depends on *commit B*, the dependency should be
   stated in the message of *commit A*. Use the SHA1 when referring to
@@ -152,16 +148,15 @@ Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches), the [git m
 
   Similarly, if *commit A* solves a bug introduced by *commit B*, it should
   also be stated in the message of *commit A*.
-
-* If a commit is going to be squashed to another commit use the `--squash` and
-  `--fixup` flags respectively, in order to make the intention clear:
+  
+* Если коммит должен быть сплющен(squash) в другой коммит, импользуйте флаг `--squash` или 
+  `--fixup`, для ясности пример:
 
   ```shell
   $ git commit --squash f387cab2
   ```
-
-  *(Tip: Use the `--autosquash` flag when rebasing. The marked commits will be
-  squashed automatically.)*
+  *(Подсказка: используйте флаг `--autosquash` при перемещении(rebase). Помеченный коммиты
+  Будут сплющены автоматически.)*
 
 ## Merging
 
