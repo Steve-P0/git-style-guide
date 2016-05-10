@@ -56,11 +56,11 @@ Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches), the [git m
   ```
   
   Сливайте личные ветки с командной как угодно (смотри ["Слияние"](#merging)).
-  В конечном итоге командная ветвь будет слита с "мастером".
+  В конечном итоге командная ветвь будет слита с "master".
 
 * Удаляйте свои ветки из уделённого репозитория (upstream repository), после того как они были слиты воедино. Только при наличии особой причины, ветви можно оставить.
 
-  Подсказка: Используйте следующую команду, когда находитесь в "мастере",
+  Подсказка: Используйте следующую команду, когда находитесь в "master",
   что бы посмотреть слитые ветви:
 
   ```shell
@@ -160,21 +160,19 @@ Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches), the [git m
 
 ## Merging
 
-* **Do not rewrite published history.** The repository's history is valuable in
-  its own right and it is very important to be able to tell *what actually
-  happened*. Altering published history is a common source of problems for
-  anyone working on the project.
+* **Не переписывайте опубликованную историю.** История репозитория ценна сама по себе
+  и очень важна для того что бы понять *что происходило на самом деле*.
+  Изменение опубликованной истории - частый источник проблем, для всех кто работает над проектом. 
 
-* However, there are cases where rewriting history is legitimate. These are
-  when:
+* Однако, есть случаи когда переписывание истории обосновано. 
+  Когда:
+    * Вы единственный человек работающий над веткой,
+      и она не будет просмотрена кем-то еще.
+    * Вы хотите почистить вашу ветку (например сплющить коммиты) 
+      и/или перебазировать(rebase) его на "master", что бы объединить его позже.
 
-  * You are the only one working on the branch and it is not being reviewed.
-
-  * You want to tidy up your branch (eg. squash commits) and/or rebase it onto
-    the "master" in order to merge it later.
-
-  That said, *never rewrite the history of the "master" branch* or any other
-  special branches (ie. used by production or CI servers).
+  Тем не менее, *никогда не переписывайте историю "master" ветки*,
+  или любых других специальных веток (т.е. используемых производственными или CI серверами).
 
 * Keep the history *clean* and *simple*. *Just before you merge* your branch:
 
