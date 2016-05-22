@@ -174,31 +174,31 @@ Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches), the [git m
   Тем не менее, *никогда не переписывайте историю "master" ветки*,
   или любых других специальных веток (т.е. используемых производственными или CI серверами).
 
-* Keep the history *clean* and *simple*. *Just before you merge* your branch:
+* Содержите историю *чистой* и *простой*. *Перед тем как слить(merge)* вашу ветку:
 
-    1. Make sure it conforms to the style guide and perform any needed actions
-       if it doesn't (squash/reorder commits, reword messages etc.)
+    1. Убедитесь что она соответсвует стайл гайду, выполните необходимые действия,
+       если нет (сплющите(squash)/измените порядок коммитов, перепишите сообщение и т.д.)
 
-    2. Rebase it onto the branch it's going to be merged to:
+    2. Перебазируйте её на ветку с которой она должна быть слита:
 
       ```shell
       [my-branch] $ git fetch
       [my-branch] $ git rebase origin/master
-      # then merge
+      # затем слияние
       ```
 
-      This results in a branch that can be applied directly to the end of the
-      "master" branch and results in a very simple history.
+      Это привёдет к тому, что ветвь может быть применена непосредственно
+      к концу "master" ветви, и как результат очень простая история.
 
-      *(Note: This strategy is better suited for projects with short-running
-      branches. Otherwise it might be better to occassionally merge the
-      "master" branch instead of rebasing onto it.)*
+      *(Заметка: Эта стратегия лучше подходит для проектов с короткоживущими ветками,
+      иначе может быть лучше время от вермени объединять изменения с "master" веткой
+      вместо того что бы перебазироваться на неё.
 
-* If your branch includes more than one commit, do not merge with a
-  fast-forward:
+* Если ваша ветвь включает в себя больше одного коммита, не объединяйте с 
+  быстрой перемоткой (fast-forward):
 
   ```shell
-  # good - ensures that a merge commit is created
+  # хорошо - убедитесь что будет создан коммит слияния
   $ git merge --no-ff my-branch
 
   # bad
