@@ -207,27 +207,27 @@ Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches), the [git m
 
 ## Misc.
 
-* There are various workflows and each one has its strengths and weaknesses.
-  Whether a workflow fits your case, depends on the team, the project and your
-  development procedures.
+* Существуют различные трудовых процессов, и каджый из них имеет свои сильные и слабые стороны.
+  Убедитесь что выбранный процесс подходит в вашем случае, это зависит от команды, проекта, 
+  и вашего порядка разработки.
 
-  That said, it is important to actually *choose* a workflow and stick with it.
+  Тем не менее, важно на самом деле *выбрать* трудовой процесс и следовать ему.
+  
+* *Будьте последовательным.* Это относится к трудовому процессу, но так же 
+  распространяется на такие вещи как: коммиты сообщений, имена веток и тэгов.
+  Согласующийся стиль всего репозитория позволяет проще разбираться в том, что
+  происходит, глядя в лог, сообщения коммитов и т.д.
 
-* *Be consistent.* This is related to the workflow but also expands to things
-  like commit messages, branch names and tags. Having a consistent style
-  throughout the repository makes it easy to understand what is going on by
-  looking at the log, a commit message etc.
+* *Тестируйте перед тем как отправлять изменения на сервер.* 
+  Не отправляйте работу сделанную наполовину.
+  
+* Используйте [аннотированные метки](http://git-scm.com/book/en/v2/Git-Basics-Tagging#Annotated-Tags)
+  для маркировки релизов или других важных точек в истории. Отдавайте предпочтение
+  [легким меткам](http://git-scm.com/book/en/v2/Git-Basics-Tagging#Lightweight-Tags) 
+  для личного использования, например что бы отметить коммиты для будущих ссылок.
 
-* *Test before you push.* Do not push half-done work.
-
-* Use [annotated tags](http://git-scm.com/book/en/v2/Git-Basics-Tagging#Annotated-Tags)
-  for marking releases or other important points in the history. Prefer
-  [lightweight tags](http://git-scm.com/book/en/v2/Git-Basics-Tagging#Lightweight-Tags)
-  for personal use, such as to bookmark commits for future reference.
-
-* Keep your repositories at a good shape by performing maintenance tasks
-  occasionally:
-
+* Содержите ваши репозитории в хорошей форме, проводя обслуживание время от времени:
+  
   * [`git-gc(1)`](http://git-scm.com/docs/git-gc)
   * [`git-prune(1)`](http://git-scm.com/docs/git-prune)
   * [`git-fsck(1)`](http://git-scm.com/docs/git-fsck)
